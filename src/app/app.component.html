@@ -1,1 +1,9 @@
 <h1>Liste de Pokemon</h1>
+<div style="display: flex; gap: 0.5rem;padding: 1rem;">
+    <input (input)="selectPokemon($event)" type="number">
+    <button (click)="selectPokemon($event)" type="button">Entrer</button>
+</div>
+<p>Pokemon: {{pokemonList[1].name}}</p>
+<p>Pokemon: {{pokemonList[2].name}}</p>
+<p>Pokemon: {{pokemonList[3].name}}</p>
+<p>Pokemon: {{pokemonList[4].name}}</p>

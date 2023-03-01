@@ -21,4 +21,8 @@ export class AppComponent implements OnInit {
   logString(item: Pokemon) {
     console.log(`La string selectioné est ${item.name}`)
   }
+
+  alertString(item: Pokemon) {
+    alert(`La string selectioné est ${item.name}`)
+  }
 }
