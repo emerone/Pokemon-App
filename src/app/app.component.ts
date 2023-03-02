@@ -9,8 +9,8 @@ import { Pokemon } from "./pokemon";
 })
 export class AppComponent implements OnInit {
   title = 'ng-app';
-  number: number = 1;
-  pokemonList : Array<Pokemon> = POKEMONS;
+  pokemonList: Array<Pokemon> = POKEMONS;
+  pokemonSelected: Pokemon|undefined;
 
   ngOnInit(): void {
     this.pokemonList.forEach(element => {
@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
     console.log(`La string selectioné est ${item.name}`)
   }
 
-  alertString(item: Pokemon) {
-    alert(`La string selectioné est ${item.name}`)
+  selectPokemon(item: string) {
+    const pokemon: Pokemon|undefined = this.pokemonList.find( el => el.id == +item) 
+    if(pokemon) this.pokemonSelected = pokemon
+    else {this.pokemonSelected = undefined}
   }
 }

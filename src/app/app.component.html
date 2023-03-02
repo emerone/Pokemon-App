@@ -1,9 +1,17 @@
-<h1>Liste de Pokemon</h1>
-<div style="display: flex; gap: 0.5rem;padding: 1rem;">
-    <input (input)="selectPokemon($event)" type="number">
-    <button (click)="selectPokemon($event)" type="button">Entrer</button>
+<div class="container">
+<h2>Liste de Pokemon</h2>
+<input #input (keyup.enter)="selectPokemon(input.value)"   type="number">
+<p *ngIf="pokemonSelected">Pokemon Selectioné : {{pokemonSelected?.name}}</p>
+<p *ngIf="!pokemonSelected">Pas de Pokemon trouvé.</p>
+<div class="row">
+    <div class="col s12 m6 l4 row z-depth-1" *ngFor="let pokemon of pokemonList">
+        <div class="col s6"> <img [src]="pokemon.picture" alt=""></div>
+        <div class="col s6 section">
+            <h5>{{pokemon.name}}</h5>
+            <p>{{pokemon.created}}</p>
+        </div>
+    </div>  
 </div>
-<p>Pokemon: {{pokemonList[1].name}}</p>
-<p>Pokemon: {{pokemonList[2].name}}</p>
-<p>Pokemon: {{pokemonList[3].name}}</p>
-<p>Pokemon: {{pokemonList[4].name}}</p>
+</div>
+
+<counter [step]="5" [value]="10"></counter>
