@@ -3,7 +3,7 @@ import { POKEMONS } from "./mock-pokemonp-list";
 import { Pokemon } from "./pokemon";
 
 @Component({
-  selector: 'app-root',
+  selector: '',
   templateUrl: 'app.component.html',
   styles: []
 })

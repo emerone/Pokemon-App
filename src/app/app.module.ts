@@ -4,18 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppCounter } from "./counter.component";
+import { AppTodoList } from "./todo-list.component";
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppTodoList,
     AppCounter,
-    
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppTodoList]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-    selector: "counter",
+    selector: "",
     template: `
     <div style="width: max-content; margin: 1rem auto;display:grid;">
         <p>Le compte est de : {{count}}</p>
