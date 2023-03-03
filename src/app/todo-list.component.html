@@ -1,17 +1,12 @@
 <main>
   <h1>Todo list</h1>
   <div class="cta-input">
-    <input type="text"><button>Ajouter</button>
+    <input type="text" #input><button (click)="addListItem($event, input, cta)">Ajouter</button>
   </div>
-  <div class="cta-list">
-    <div>
-      <p>Expample</p>
-      <p>Date</p>
-      <i #el (click)="removeParent($event)" class='bx bx-trash'></i>
-    </div>
-    <div>
-      <p>Expample</p>
-      <p>Date</p>
+  <div #cta class="cta-list">
+    <div *ngFor="let item of items">
+      <p>{{item}}</p>
+      <p>{{item}}</p>
       <i #el (click)="removeParent($event)" class='bx bx-trash'></i>
     </div>
   </div>
