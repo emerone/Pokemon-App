@@ -31,6 +31,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   padding: 0rem 1rem;
 }
 .cta-list > div > p::first-letter {

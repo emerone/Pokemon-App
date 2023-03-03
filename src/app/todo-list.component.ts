@@ -6,22 +6,42 @@ import { Component } from '@angular/core';
   styleUrls: ["todo-list.component.css"]
 })
 export class AppTodoList {
-  items: Array<object> = []
+  items: any = []
 
   removeParent(e: MouseEvent): void {
     const parent: HTMLElement|null = (e.target as HTMLElement).parentElement
     parent?.remove()
   }
 
-  addListItem(e: MouseEvent|KeyboardEvent, input: HTMLInputElement, cta: HTMLDivElement):void {
-    const element: HTMLButtonElement|null = (e.target as HTMLButtonElement)
-    const value: string = input.value 
+  addListItem(e: MouseEvent|KeyboardEvent, input: HTMLInputElement):void {
+    if (e instanceof MouseEvent){
+      const value: string = input.value 
 
-    const date: Date = new Date
-    const datePiped: string = date.getDate() + "/" + date.getMonth() + 1 + "/" + date.getFullYear();
-    
-    this.items.push({text: value, date: datePiped})
+      if(!value) return
+      
+      const date: Date = new Date
+      const datePiped: string = date.getDate() + "/" + date.getMonth() + 1 + "/" + date.getFullYear();
+      
+      const item = {text: value as string, date: datePiped as string}
+      
+      this.items.push(item)
+      
+      input.value = ''
+    }
+    if (e instanceof KeyboardEvent){
+      if(e.key !== "Enter") return
+      const value: string = input.value 
 
-    input.value = ''
+      if(!value) return
+      
+      const date: Date = new Date
+      const datePiped: string = date.getDate() + "/" + date.getMonth() + 1 + "/" + date.getFullYear();
+      
+      const item = {text: value as string, date: datePiped as string}
+      
+      this.items.push(item)
+      
+      input.value = ''
+    }
   }
 }
