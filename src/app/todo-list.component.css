@@ -41,7 +41,7 @@ h1 {
 
 i {
   cursor: pointer;
-  color: #7c7;
+  color: rgb(224, 121, 121);
   padding: 0.3rem;
   border-radius: 125rem
 }
