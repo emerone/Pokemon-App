@@ -4,13 +4,13 @@
     <input type="text" #input (keydown)="addListItem($event, input)"><button (click)="addListItem($event, input)">Ajouter</button>
   </div>
   <div class="cta-list">
-    <div *ngFor="let item of items" style="">
+    <div *ngFor="let item of items">
       <label >
         <input type="checkbox" />
         <span style="padding: 0.5rem;"></span>
       </label>
-      <p>{{item.text}}</p>
-      <p>{{item.date}}</p>
+      <p>{{ item.text }}</p>
+      <p>{{ item.date }}</p>
       <i #el (click)="removeParent($event)" class='bx bx-trash'></i>
     </div>
   </div>

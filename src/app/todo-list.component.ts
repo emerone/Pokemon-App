@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-root',
@@ -17,11 +18,10 @@ export class AppTodoList {
   addListItem(e: MouseEvent|KeyboardEvent, input: HTMLInputElement):void {
 
     const value: string = input.value 
+
+    const formatDate: string = format(new Date(), 'MM/dd/yyyy, h:mm'); 
     
-    const date: Date = new Date
-    const datePiped: string = date.getDate() + "/" + date.getMonth() + 1 + "/" + date.getFullYear();
-    
-    const item = {text: value as string, date: datePiped as string}
+    const item = {text: value as string, date: formatDate as string}
 
     if (e instanceof MouseEvent){
       e.preventDefault;

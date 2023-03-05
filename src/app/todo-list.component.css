@@ -30,9 +30,17 @@ h1 {
 .cta-list > div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
   padding: 0rem 1rem;
+}
+.cta-list > div > :first-child {
+  margin-right: 1rem;
+}
+.cta-list > div > :nth-child(2) {
+  margin-right: auto;
+}
+.cta-list > div > :nth-child(3) {
+  margin-left: 1rem;
+  margin-right: 0.5rem;
 }
 .cta-list > div > p::first-letter {
   text-transform: uppercase;
