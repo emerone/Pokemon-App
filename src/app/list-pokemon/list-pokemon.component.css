@@ -1,0 +1,34 @@
+.👌 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+.👌 > * {
+    width: max(300px, calc(33.33% - 1rem/1.5));
+    display: none;
+}
+.👌 > *:has(.💕) {
+    display: block;
+}
+
+.💕 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: #0003 0 0 0.3rem;
+    transition: all 0.2s ease;
+    aspect-ratio: 3/2;
+}
+.💕:hover {
+    box-shadow: #1b7a7183 0 0 0.5rem ;
+}
+.💕 p {
+    margin-inline: auto;
+    width: max-content;
+}
+.💕> div:last-child {
+    width: 50%;
+}
