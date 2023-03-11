@@ -1,1 +1,18 @@
-<p>list-pokemon works!</p>
+<div class="container">
+    <h2>Liste de Pokemon</h2>
+    <input #input (keyup.enter)="selectPokemon(input.value)" placeholder="Selectioné un nombre"  type="number">
+    <p *ngIf="pokemonSelected?.name">ID du Pokemon Selectioné : {{pokemonSelected?.name}}</p>
+    <p *ngIf="!pokemonSelected">Pas de Pokemon trouvé.</p>
+    <div class="👌">
+        <div *ngFor="let pokemon of pokemonList">
+            <div class="💕" *ngIf="value.includes(pokemon.id.toString())" >
+                <div class="col s6"> <img [src]="pokemon.picture" alt=""></div>
+                <div class="col s6 section">
+                    <h5>{{pokemon.name}}</h5>
+                    <p>CP: {{pokemon.cp}} | HP: {{pokemon.hp}}</p>
+                    <p style="width: max-content;margin: 1rem auto;">ID: {{pokemon.id}}</p>
+                </div>
+            </div>
+        </div>  
+    </div>
+    </div>
